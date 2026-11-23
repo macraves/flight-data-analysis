@@ -1,7 +1,7 @@
 """Plotting functions for flights data"""
 
 from matplotlib.colors import Normalize
-from matplotlib import cm
+import matplotlib
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -96,7 +96,7 @@ def scatter_heat_map_origin_destination(data_manager):
 
     # Customizing scatter plot
     norm = Normalize(vmin=min(delay_percentage), vmax=max(delay_percentage))
-    cmap = cm.get_cmap("Reds")
+    cmap = matplotlib.colormaps["Reds"]
     s = delay_percentage * 1
 
     sc = plt.scatter(
